@@ -45,7 +45,7 @@ const model = {
     ratings: [
         
     ],
-    registeredUsers: [
+    users: [
         {
         name: 'morten',
         password: '',
