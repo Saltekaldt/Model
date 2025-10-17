@@ -1,60 +1,84 @@
 const model = {
     app:{//del 1 - overordnet viewstate
-        currentPage: 'startPage',
+        currentPage: 'startPage',//dataBase, registerPage, contactPage, 
         currentUser: '', 
         darkMode: false
 
     },
     viewstate: {//del 2 - viewstate per side - inputs
         userLogin:{
-           name: "",
-           password: "",
-           age: "",
-                
+           email: "",
+           password: "",                
         },
-        userActivity:{
-           Name: '',
-           Length: '',
-           Difficulty: '',
-           Rating: 0
+        editProfile: {
+            img: ""
         },
-        aktivityPage:{
-            rating: '',
-            Komment: ''
+        
+        registerfoundDisc:{
+           name: '',
+           bane: '',
+           tlf: '',
+           email: '',
+           farge: '',
+           status: ''
         },
+    
         registerUser:{
             name: '',
             password: '',
-            age: '',
-            img: '',
-            bio: '',
-            recentActivities: []
+            repeatPassword: '',
+            email: '',
+            tlfNr: '',
+        },
+        filterDisc: {
+            search: "",
+            course: "",
+            farge: ""
         }
     },
-    //del 3
-    activities: [
-        {Name: 'Klatring', Length: '30 min', Difficulty: 'Vanskelig', Rating: 4},
-        {Name: 'Dancing', Length: '1 h', Difficulty: 'moderat', Rating: 4},
-        {Name: 'Running', Length: '15 min', Difficulty: 'Easy', Rating: 2},
-        {Name: '', Length: '', Difficulty: '', Rating: 0},
-        {Name: 'WeightLifting', Length: '1.5 h', Difficulty: 'Vanskelig', Rating: 2},
-        {Name: 'Boxing', Length: '30 min', Difficulty: 'Vanskelig', Rating: 3},
-        {Name: 'Football', Length: '1.5 h', Difficulty: 'Easy', Rating: 5},
+
+
+        //del 3'
+
+        users:[{
+             name: 'Morten',
+             password: 'Morten10',
+             email: 'Morten@mortenmail.no',
+             tlfNr: '12345678',
+            },{
+             name: 'Nada',
+             password: 'Nada10',
+             email: 'Nada@nadamail.no',
+             tlfNr: '23456789',  
+            }
+    ],
+
+    discAnsvarlig:[{
+        name: 'Laurits',
+        password: 'Laurits10',
+        email: 'Laurits@Lauritsmail.no',
+        tlfNr: '33456780',   
+    }
+
 
     ],
-    ratings: [
+    database:[{
+        name: "Streamline Trace",
+        bane: 'Oslo 1',
+        farge: 'Rosa',
+        navn: 'Bjarne',
+        dato: '16.10.2025',
+        status: 'aktiv',
         
+    }
+
     ],
-    users: [
-        {
-        name: 'morten',
-        password: '',
-        age: '',
-        img: '',
-        bio: '',
-        recentActivities: []
+
+    
+    contact: {
+        discEmail: 'discansvarlig@Mortenmail.no',
+        adminEmail: 'admin@Mortenmail.no',       
     },
 
-    ]
-            
-};
+
+}
