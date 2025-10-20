@@ -1,18 +1,31 @@
-function registerUser(){    
-    model.users.push({
-    name: model.viewstate.registerUser.name,
-    password: model.viewstate.registerUser.password,
-    repeatPassword: model.viewstate.registerUser.repeatPassword,
-    email: model.viewstate.registerUser.email,
-    tlfNr: model.viewstate.registerUser.tlfNr
-    });
+function registerUser(){ 
+    let newUser= model.viewstate.registerUser
 
-    model.viewstate.registerUser= {
+    if (newUser.name == ''){
+        alert("You have not filled out the registration")
+        return;
+    }
+    if (newUser.email == ''){
+        alert("You have not filled out the registration")
+        return;
+    }
+    if (newUser.tlfNr == ''){
+        alert("You have not filled out the registration")
+        return;
+    }
+    if (newUser.password !== newUser.repeatPassword || newUser.password == '') {
+    alert("Passwords do not match.");
+    return;
+    }
+        
+    model.users.push({...newUser});
+
+    newUser = {
         name: '',
         password: '',
         repeatPassword: '',
         email: '',
         tlfNr: '',
         };
-     drawRegistrationPage()
+     drawRegistrationPage();
 }
