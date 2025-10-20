@@ -4,15 +4,15 @@ function KontaktView(){
     `<div class="registrationbackground">
     <div class="center">
         <br><br><br><br>
-        <p>Kontakt oss</p>
+        <h1>Kontakt oss</h1>
         <br><br>
-        <h3>Admin</h3>
+        <h2>Admin</h2>
         <br>
-        <h2>AdminEmail@shadyapps.ru</h2>
+        <h3>AdminEmail@shadyapps.ru</h3>
         <br><br>
-        <h3>Disc ansvarllig</h3>
+        <h2>Disc ansvarllig</h2>
         <br>
-        <h2>DiscAnsvarligemail@shadyapps.ru</h2>
+        <h3>DiscAnsvarligemail@shadyapps.ru</h3>
     </div>
 </div>`
 }
