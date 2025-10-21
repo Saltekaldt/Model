@@ -40,8 +40,8 @@ function showHeader(){
           style='height:70px; width:70px; border-radius : 50px' >
           <span style="font-size: 1.5em; font-weight: bold">Lost&Found DiscGolf</span>
     </div>
-        <a href="#" style="color: white; margin-left: 300px">Sign in</a>
-        <a href="#" style="color: white; margin-left: 1px">Register</a>
+        <a href="#" style="color: white; margin-left: 300px"onclick="updateViewLogin()">Sign in</a>
+        <a href="#" style="color: white; margin-left: 1px"onclick="drawRegistrationPage()">Register</a>
     <div>
     </div>
   </header>
