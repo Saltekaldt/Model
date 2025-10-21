@@ -1,4 +1,4 @@
-KontaktView()
+//KontaktView()
 function KontaktView(){
     document.getElementById("app").innerHTML = 
     `<div class="registrationbackground">

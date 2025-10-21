@@ -1,4 +1,4 @@
-drawRegistrationPage()
+//drawRegistrationPage()
 function drawRegistrationPage(){
     document.getElementById('app').innerHTML = /*html*/ `
         <div class="registrationBackground">
