@@ -27,5 +27,5 @@ function registerUser(){
         email: '',
         tlfNr: '',
         };
-     drawRegistrationPage();
+     profileView();
 }

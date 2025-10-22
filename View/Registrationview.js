@@ -1,6 +1,7 @@
 //drawRegistrationPage()
 function drawRegistrationPage(){
     document.getElementById('app').innerHTML = /*html*/ `
+    ${showHeader()}<br><br><br><br><br>
         <div class="registrationBackground">
             <div class="center">
                 <p>Name</p>
@@ -28,7 +29,7 @@ function drawRegistrationPage(){
                     type="number" 
                     oninput="model.viewstate.registerUser.tlfNr = this.value"><br><br>
                     <button onclick="registerUser()">Register New User</button>
-                    <button onclick="registerUser()">Register New User</button>
+                    <button onclick="HomePageView()">Go back</button>
             </div>
         </div>
 
@@ -37,7 +38,7 @@ function drawRegistrationPage(){
 }
 function updateView(){
     let page = model.app.currentPage
-    if(page === 'startPage'){
+    if(page == 'startPage'){
         HomePageView()
     }
     else if (page == 'registerPage'){
