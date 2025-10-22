@@ -1,26 +1,26 @@
 function registerUser(){ 
-    let newUser= model.viewstate.registerUser
+    const newUser= model.viewstate.registerUser;
 
     if (newUser.name == ''){
-        alert("You have not filled out the registration")
+        alert("You have not filled out the registration");
         return;
-    }
+    };
     if (newUser.email == ''){
-        alert("You have not filled out the registration")
+        alert("You have not filled out the registration");
         return;
-    }
+    };
     if (newUser.tlfNr == ''){
-        alert("You have not filled out the registration")
+        alert("You have not filled out the registration");
         return;
-    }
+    };
     if (newUser.password !== newUser.repeatPassword || newUser.password == '') {
     alert("Passwords do not match.");
     return;
-    }
+    };
         
     model.users.push({...newUser});
 
-    newUser = {
+    model.viewstate.registerUser = {
         name: '',
         password: '',
         repeatPassword: '',
