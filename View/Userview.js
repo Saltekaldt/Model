@@ -1,5 +1,7 @@
-//profileView()
+
+profileView()
 function profileView(){
+  const user = model.app.currentUser
     document.getElementById('app').innerHTML=/*html*/`
     ${showHeader()}<br><br><br><br><br>
   <div class="profilePage">
@@ -9,14 +11,14 @@ function profileView(){
           <div class="avatar"></div>
           <p>Username</p>
         </div>
-        <button onclick="">Logout</button>
+        <button onclick="logout()">Logout</button>
         <button onclick="">Database</button>
-        <button onclick="">Kontakt oss</button>
-        <button onclick="">Registrer found disc</button>
+        <button onclick="KontaktView()">Kontakt oss</button>
+        <button onclick="registerDiscView()">Registrer found disc</button>
       </div>
 
       <section class="content">
-        <h2>Welcome: user</h2>
+        <h2>Welcome: ${user.name}</h2>
         <p>Discs with your number</p>
 
         <div class="disc-container">

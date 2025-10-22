@@ -29,3 +29,6 @@ function registerUser(){
         };
      profileView();
 }
+function setCurrentUser(){
+    
+}
