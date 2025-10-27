@@ -1,9 +1,7 @@
-
-profileView()
-function profileView(){
+function discAdminView(){
   const user = model.app.currentUser
     document.getElementById('app').innerHTML=/*html*/`
-    ${showHeader2()}<br><br><br><br><br>
+    ${showHeader()}<br><br><br><br><br>
   <div class="profilePage">
     <main class="main">
       <div class="sidebar">
@@ -11,11 +9,12 @@ function profileView(){
           <div class="avatar"></div>
           <p>Username</p>
         </div>
-        <button onclick="logout()">Edit profile</button>
+        <button onclick="logout()">Logout</button>
         <button onclick="">Database</button>
         <button onclick="KontaktView()">Kontakt oss</button>
         <button onclick="registerDiscView()">Registrer found disc</button>
         <button onclick="openBag()">open bag</button>
+        <button onclick="ChangeRoutines()">Change Routine</button>
       </div>
 
       <section class="content">
@@ -99,28 +98,4 @@ function openBag(){
 function closeBag(){
   const bagId = document.getElementById('bag')
   document.body.removeChild(bagId)
-}
-function showHeader2(){
-  return /*HTML*/`
-
-  <header class="logoContainerDiv">
-
-    <div  class="logoDiv">
-          <img src='Images/img2.png'
-                alt = 'logo'
-          class="logoImage"
-          onclick="profileView()" >
-          <span class="logoText" onclick="profileView()">Lost&Found DiscGolf</span>
-  
-    
-   
-        
-    </div>
-
-
-        <a href="#" onclick="logout()" class="headerAnchor2">Logout</a>
-  </header>
-  
-  `
-
 }

@@ -19,6 +19,7 @@ function registerUser(){
     };
         
     model.users.push({...newUser});
+    model.app.currentUser = {...newUser}
 
     model.viewstate.registerUser = {
         name: '',

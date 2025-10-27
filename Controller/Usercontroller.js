@@ -29,3 +29,7 @@ function countDown(){
 function editProfile(){
 
 }
+function addDiscToBag(){
+
+}
+
