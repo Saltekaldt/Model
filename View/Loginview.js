@@ -19,13 +19,4 @@ function updateViewLogin(){
         </div>
         `;
     document.getElementById("app").innerHTML = html;
-    };
-
-    function createBanner(){
-        return /*html*/ `
-        <div>
-            Banner
-            <div>Logo</div>
-        </div>
-        `;
-    };
+};
