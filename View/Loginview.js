@@ -1,7 +1,8 @@
 function updateViewLogin(){
     let html = /*html*/ `
+    
         <div>
-        ${createBanner()}
+        ${showHeader()}<br><br><br><br><br>
         <br>
         Username <br>
         <input 

@@ -1,6 +1,6 @@
 function registerDiscView(){
     let html = /*html*/`
-    ${createBanner()}<br>
+    ${showHeader()}<br><br><br><br><br>
     <h2>Register found disc</h2>
     Tlf. nr <input 
             type="text" 
@@ -19,6 +19,7 @@ function registerDiscView(){
             oninput=""><br>
     <button onclick="registerFoundDisc()">Register to database</button>
     `;
+    document.getElementById('app').innerHTML= html
 };
 
 function createBanner(){
