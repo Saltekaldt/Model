@@ -1,6 +1,7 @@
 databaseview()
 function databaseview(){
     document.getElementById("app").innerHTML =  `
+    ${showHeader2()}<br><br><br><br><br>
     <div class="database-grid">
         <div class="found-disc-button"><button> Register found disc</button></div>
         <div class="search-bar" class="test">search: <input type="text"><br><br><br><br> Bane:

@@ -12,7 +12,7 @@ function profileView(){
           <p>Username</p>
         </div>
         <button onclick="logout()">Edit profile</button>
-        <button onclick="">Database</button>
+        <button onclick="databaseview()">Database</button>
         <button onclick="KontaktView()">Kontakt oss</button>
         <button onclick="registerDiscView()">Registrer found disc</button>
         <button onclick="openBag()">open bag</button>
