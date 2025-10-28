@@ -1,6 +1,6 @@
 function registerDiscView(){
     let html = /*html*/`
-    ${showHeader()}<br><br><br><br><br>
+    ${showHeader2()}<br><br><br><br><br>
     <h2>Register found disc</h2>
     Tlf. nr <input 
             type="text" 
