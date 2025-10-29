@@ -13,6 +13,12 @@ function HomePageView(){
         eager to be returned to their owners.
         Sign in or Register to browse thousands of lost discs</p>
       <br>
+      <p>
+      Lost or Found a missing disc? 
+      <button class="signInButton" onclick="updateViewLogin()">Sign In</button>
+            or
+      <button class="registerButton" onclick="drawRegistrationPage()">Register</button>
+      </p>
       <img src="Images/20201229_183308.jpg" 
            class="homepageImage">
 
