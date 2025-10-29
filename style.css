@@ -175,3 +175,22 @@
     margin: 5px;
 
 }
+
+.editProfileHeader{
+    max-width: 400px;
+    margin:auto;
+    text-align: center;
+}
+
+
+.profilePic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+
+#profileImageInput{
+    margin-top: 10px;
+}
