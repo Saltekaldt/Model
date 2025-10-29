@@ -95,7 +95,7 @@ function discAdminView(){
 
 
 // }
-function closeBag(){
-  const bagId = document.getElementById('bag')
-  document.body.removeChild(bagId)
-}
+// function closeBag(){
+//   const bagId = document.getElementById('bag')
+//   document.body.removeChild(bagId)
+// }

@@ -8,7 +8,7 @@ function profileView(){
     <main class="main">
       <div class="sidebar">
         <div class="userFrame">
-          <div class="avatar"></div>
+          <img src= "Images/Profilbilde1.jpg" class="avatar">
           <p>Username</p>
         </div>
         <button onclick="logout()">Edit profile</button>
@@ -72,29 +72,26 @@ function profileView(){
     `
 }
 //openBag()
-function openBag(){
-  
-  if(document.querySelector('#bag')){
-    return
-  }
-  
+function openBag() {
+  if (document.querySelector('#bag')) return
+
   const bag = document.createElement('div')
   bag.id = 'bag'
+
   bag.innerHTML = /*html*/`
     <div class='mainBag'>
       <button onclick="closeBag()">close</button>
       <h2>Your Bag</h2>
-      <p></p> 
+      <div class="bagDiscs"></div>
       <div>
         <button>Your discs</button>
         <button>add New disc</button>
       </div>
     </div>
   `;
-  document.body.appendChild(bag)
+  document.body.appendChild(bag);
 
-
-
+  printYourBag();
 }
 function closeBag(){
   const bag = document.querySelector('#bag')
