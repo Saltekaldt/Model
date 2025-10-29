@@ -74,7 +74,7 @@ function profileView(){
 //openBag()
 function openBag(){
   
-  if(document.getElementById('bag')){
+  if(document.querySelector('#bag')){
     return
   }
   
@@ -84,7 +84,7 @@ function openBag(){
     <div class='mainBag'>
       <button onclick="closeBag()">close</button>
       <h2>Your Bag</h2>
-      <p>Legg til en for løkke som printer ut discer i model</p> 
+      <p></p> 
       <div>
         <button>Your discs</button>
         <button>add New disc</button>
@@ -97,8 +97,8 @@ function openBag(){
 
 }
 function closeBag(){
-  const bagId = document.getElementById('bag')
-  document.body.removeChild(bagId)
+  const bag = document.querySelector('#bag')
+  document.body.removeChild(bag)
 }
 function showHeader2(){
   return /*HTML*/`

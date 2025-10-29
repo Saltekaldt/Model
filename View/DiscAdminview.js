@@ -71,30 +71,30 @@ function discAdminView(){
     `
 }
 //openBag()
-function openBag(){
+// function openBag(){
   
-  if(document.getElementById('bag')){
-    return
-  }
+//   if(document.getElementById('bag')){
+//     return
+//   }
   
-  const bag = document.createElement('div')
-  bag.id = 'bag'
-  bag.innerHTML = /*html*/`
-    <div class='mainBag'>
-      <button onclick="closeBag()">close</button>
-      <h2>Your Bag</h2>
-      <p>Legg til en for løkke som printer ut discer i model</p> 
-      <div>
-        <button>Your discs</button>
-        <button>add New disc</button>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(bag)
+//   const bag = document.createElement('div')
+//   bag.id = 'bag'
+//   bag.innerHTML = /*html*/`
+//     <div class='mainBag'>
+//       <button onclick="closeBag()">close</button>
+//       <h2>Your Bag</h2>
+//       <p>Legg til en for løkke som printer ut discer i model</p> 
+//       <div>
+//         <button>Your discs</button>
+//         <button>add New disc</button>
+//       </div>
+//     </div>
+//   `;
+//   document.body.appendChild(bag)
 
 
 
-}
+// }
 function closeBag(){
   const bagId = document.getElementById('bag')
   document.body.removeChild(bagId)
