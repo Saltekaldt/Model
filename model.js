@@ -54,14 +54,16 @@ const model = {
              email: 'Morten@mortenmail.no',
              tlfNr: '12345678',
              id: 0,
-             img: '', 
+             img: '',
+             userDisc: [], 
             },{
              name: 'Nada',
              password: 'Nada10',
              email: 'Nada@nadamail.no',
              tlfNr: '23456789',
              id: 1,
-             img: '',  
+             img: '',
+             userDisc: [],  
             }
     ],
 
@@ -75,14 +77,23 @@ const model = {
 
     ],
     database:[{
-        name: "Streamline Trace",
+        name: "Putter",
         bane: 'Oslo 1',
         farge: 'Rosa',
-        navn: 'Bjarne',
+        navn: 'Morten',
         dato: '16.10.2025',
-        status: 'aktiv',
+        status: 'Registrert',
         id: 0,
         
+    },
+    {
+        name: "Driver",
+        bane: 'Oslo 1',
+        farge: 'Rosa',
+        navn: 'Morten',
+        dato: '22.10.2025',
+        status: 'Savnet',
+        id: 0,
     }
 
     ],

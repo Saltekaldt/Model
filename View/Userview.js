@@ -11,7 +11,7 @@ function profileView(){
           <img src= "Images/Profilbilde1.jpg" class="avatar">
           <p>Username</p>
         </div>
-        <button onclick="logout()">Edit profile</button>
+        <button onclick="editProfileView()">Edit profile</button>
         <button onclick="databaseview()">Database</button>
         <button onclick="KontaktView()">Kontakt oss</button>
         <button onclick="registerDiscView()">Registrer found disc</button>

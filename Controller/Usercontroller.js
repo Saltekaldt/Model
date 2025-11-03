@@ -34,7 +34,7 @@ function printYourBag() {
           <div class="disc-info">
             <span class="disc-name">${disc.name}</span>
             <span>${disc.dato}</span>
-            <button onclick="donateDisc(${disc.id})">Doner</button>
+            <button onclick="donateDisc(${disc.id})">Etterlys</button>
           </div>
           <button onclick="removeDisc(${disc.id})">x</button>
         </div>
