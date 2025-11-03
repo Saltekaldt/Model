@@ -7,7 +7,25 @@ const model = {
              email: 'Morten@mortenmail.no',
              tlfNr: '12345678',
              id: 0,
-             img: 'Images/Profilbilde1.jpg', 
+             img: 'Images/Profilbilde1.jpg',
+             bagDiscs: [{
+                name: "Putter",
+                bane: 'Oslo 1',
+                farge: 'Rosa',
+                navn: 'Morten',
+                dato: '16.10.2025',
+                status: 'Registrert',
+                id: 0,        
+            },
+            {
+                name: "Driver",
+                bane: 'Oslo 1',
+                farge: 'Rosa',
+                navn: 'Morten',
+                dato: '22.10.2025',
+                status: 'Savnet',
+                id: 0,
+            }], 
             }, 
         darkMode: false
 
@@ -55,7 +73,7 @@ const model = {
              tlfNr: '12345678',
              id: 0,
              img: '',
-             userDisc: [], 
+             bagDiscs: [], 
             },{
              name: 'Nada',
              password: 'Nada10',
@@ -63,7 +81,7 @@ const model = {
              tlfNr: '23456789',
              id: 1,
              img: '',
-             userDisc: [],  
+             bagDiscs: [],  
             }
     ],
 
@@ -97,6 +115,7 @@ const model = {
     }
 
     ],
+    donatedDiscs:[],
 
     
     contact: {
