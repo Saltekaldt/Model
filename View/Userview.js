@@ -1,77 +1,42 @@
 
 profileView()
-function profileView(){
-  const user = model.app.currentUser
-    document.getElementById('app').innerHTML=/*html*/`
+function profileView() {
+  const user = model.app.currentUser;
+  document.getElementById('app').innerHTML = /*html*/`
     ${showHeader2()}<br><br><br><br><br>
-  <div class="profilePage">
-    <main class="main">
-      <div class="sidebar">
-        <div class="userFrame">
-          <img src= "Images/Profilbilde1.jpg" class="avatar">
-          <p>Username</p>
-        </div>
-        <button onclick="editProfileView()">Edit profile</button>
-        <button onclick="databaseview()">Database</button>
-        <button onclick="KontaktView()">Kontakt oss</button>
-        <button onclick="registerDiscView()">Registrer found disc</button>
-        <button onclick="openBag()">open bag</button>
-      </div>
-
-      <section class="content">
-        <h2>Welcome: ${user.name}</h2>
-        <p>Discs with your number</p>
-
-        <div class="disc-container">
-          <div class="disc">
-            <div class="status">
-              <label>Status:</label>
-            </div>
-            <div class="disc-info">
-              <span class="disc-name">Disc 1</span>
-              <span>7 dager til donasjon</span>
-              <button onclick="">Doner</button>
-            </div>
-            <button>x</button>
+    <div class="profilePage">
+      <main class="main">
+        <div class="sidebar">
+          <div class="userFrame">
+            <img src="Images/Profilbilde1.jpg" class="avatar">
+            <p>${user.name}</p>
           </div>
-
-          <div class="disc">
-            <div class="status">
-              <label>Status:</label>
-            </div>
-            <div class="disc-info">
-              <span class="disc-name">Disc 2</span>
-              <span>7 dager til donasjon</span>
-              <button>Doner</button>
-            </div>
-            <button>x</button>
-          </div>
-
-          <div class="disc">
-            <div class="status">
-              <label>Status:</label>
-            </div>
-            <div class="disc-info">
-              <span class="disc-name">Disc 3</span>
-              <span>7 dager til donasjon</span>
-              <button>Doner</button>
-            </div>
-            <button>x</button>
-          </div>
+          <button onclick="editProfileView()">Edit profile</button>
+          <button onclick="databaseview()">Database</button>
+          <button onclick="KontaktView()">Kontakt oss</button>
+          <button onclick="registerDiscView()">Registrer found disc</button>
+          <button onclick="openBag()">open bag</button>
         </div>
 
-        <div>
-          <button>Doner selected</button>
-          <button>Hold selected</button>
-          <button>Mail selected</button>
-        </div>
-      </section>
-    </main>
-  </div>
-    
-    `
+        <section class="content">
+          <h2>Welcome: ${user.name}</h2>
+          <p>Discs with your number</p>
+
+          <div class="disc-container"></div>
+
+          <div>
+            <button>Doner selected</button>
+            <button>Hold selected</button>
+            <button>Mail selected</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  `;
+
+  PrintProfileDisc();
 }
-//openBag()
+
 function openBag() {
   if (document.querySelector('#bag')) return
 
@@ -84,8 +49,7 @@ function openBag() {
       <h2>Your Bag</h2>
       <div class="bagDiscs"></div>
       <div>
-        <button>Your discs</button>
-        <button>add New disc</button>
+        <button onclick="registerDiscToBag()">register New disc</button>
       </div>
     </div>
   `;
@@ -93,10 +57,7 @@ function openBag() {
 
   printYourBag();
 }
-function closeBag(){
-  const bag = document.querySelector('#bag')
-  document.body.removeChild(bag)
-}
+
 function showHeader2(){
   return /*HTML*/`
 
@@ -119,5 +80,56 @@ function showHeader2(){
   </header>
   
   `
+
+}
+function registerDiscToBag(){
+  if (document.querySelector('#bagRegister')) return
+
+  const bagRegister = document.createElement('div')
+  bagRegister.id = 'bagRegister'
+
+  bagRegister.innerHTML = /*html*/`
+        <div class="bagInputs">
+            <div class="center">
+            <h1>Register new disc</h1>
+                <p>Status</p>
+                <input 
+                    type="text" 
+                    oninput="model.viewstate.registerfoundDisc.status = this.value"><br>
+
+                <p>Bane</p>
+                <input 
+                    type="text" 
+                    oninput="model.viewstate.registerfoundDisc.bane = this.value"><br>
+
+                <p>farge</p>
+                <input 
+                    type="text" 
+                    oninput="model.viewstate.registerfoundDisc.farge = this.value"><br>
+
+                <p>type</p>
+                <select onchange="model.viewstate.registerfoundDisc.name = this.value">
+                 <option value="Putter">Putter</option>
+                 <option value="driver">driver</option>
+                 <option value="mid-ranges">mid-ranges</option>
+                 <option value="fairway">fairway</option>
+                </select>
+
+                <p>dato</p>
+                <input 
+                    type="number" 
+                    oninput="model.viewstate.registerfoundDisc.tlfNr = this.value"><br><br>
+
+
+                    <button onclick="addDiscToBag()">add new disc</button>
+                    <button onclick="returnToBag()">Go back</button>
+            </div>
+        </div>
+
+    
+    `;
+  document.body.appendChild(bagRegister);
+
+
 
 }

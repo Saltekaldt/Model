@@ -12,20 +12,18 @@ function logout(){
 
 function printYourBag() {
   const user = model.app.currentUser;
-  const discs = model.database;
-  const userDiscs = discs.filter(ting => ting.navn === user.name);
+  const discs = user.bagDiscs;
   const bagContainer = document.querySelector('.bagDiscs');
 
   if (!bagContainer) return;
 
-
   let html = '';
 
-  if (userDiscs.length === 0) {
+  if (!discs || discs.length === 0) {
     html = `<p>No discs found in your bag.</p>`;
   } else {
-    for (let i = 0; i < userDiscs.length; i++) {
-      const disc = userDiscs[i];
+    for (let i = 0; i < discs.length; i++) {
+      const disc = discs[i];
       html += /*html*/`
         <div class="disc">
           <div class="status">
@@ -33,34 +31,90 @@ function printYourBag() {
           </div>
           <div class="disc-info">
             <span class="disc-name">${disc.name}</span>
-            <span>${disc.dato}</span>
-            <button onclick="donateDisc(${disc.id})">Etterlys</button>
+            <span>${disc.dato || ''}</span>
+            <button onclick="donateDisc(${disc.id})">donate</button>
           </div>
-          <button onclick="removeDisc(${disc.id})">x</button>
+          <button onclick="">x</button>
         </div>
       `;
     }
   }
 
-  // insert final HTML once
   bagContainer.innerHTML = html;
 }
 
-function removeDisc(){
-
+function removeDisc(id){
+const index = model.database.findIndex(index => index.id === id)
+model.database.splice(index,1)
+PrintProfileDisc()
 }
-function donateDisc(){
+function donateDisc(id){
+const index = model.database.findIndex(index => index.id === id)
+const donatedDisc = model.database.splice(index, 1)[0];
 
+model.donatedDiscs.push(donateDisc)
+PrintProfileDisc();
 }
 
-function countDown(){
+function PrintProfileDisc() {
+  const user = model.app.currentUser;
+  const discs = model.database;
+  const userDiscs = discs.filter(ting => ting.navn === user.name);
+  const discContainer = document.querySelector('.disc-container');
+  let html = '';
 
+if (userDiscs.length === 0) {
+  html = `<p>No discs found in your bag.</p>`;
+} else {
+  for (let i = 0; i < userDiscs.length; i++) {
+    const disc = userDiscs[i];
+    html += /*html*/`
+      <div class="disc">
+        <div class="status">
+          <label>Status:</label> ${disc.status || 'Ukjent'}
+        </div>
+        <div class="disc-info">
+          <span class="disc-name">${disc.navn}<br> ${disc.name}</span>
+          <span>${disc.dato || ''}</span>
+          <button onclick="donateDisc(${disc.id})">Doner</button>
+        </div>
+        <button onclick="removeDisc(${disc.id})">x</button>
+      </div>
+    `;
+  }
 }
 
-function editProfile(){
-
+  discContainer.innerHTML = html;
 }
+
+
+
 function addDiscToBag(){
+  const NewDisc= {...model.viewstate.registerfoundDisc};
+  const bagDiscs= model.app.currentUser.bagDiscs;
 
+  bagDiscs.push(NewDisc)
+  model.viewstate.registerfoundDisc = {
+           name: '',
+           bane: '',
+           tlf: '',
+           email: '',
+           farge: '',
+           status: '',
+           dato: '',
+        }
+  printYourBag()
+  returnToBag()
 }
 
+
+function closeBag(){
+  const bag = document.querySelector('#bag')
+  document.body.removeChild(bag)
+}
+
+
+function returnToBag(){
+  const bagRegister = document.querySelector('#bagRegister')
+  document.body.removeChild(bagRegister)
+}
