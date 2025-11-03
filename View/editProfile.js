@@ -1,10 +1,9 @@
 
-const app = document.getElementById('app')
 
 editProfileView()
 function editProfileView(){
-  const user = model.currentUser;
-  const edit = model.viewState.editProfile;
+  const user = model.app.currentUser;
+  const edit = model.viewstate.editProfile;
 
   app.innerHTML = /*HTML*/`
   
@@ -12,7 +11,7 @@ function editProfileView(){
   <h1 class="editProfileHeader">Edit your profile</h1>
 
   <img class="editProfilePic"
-      src="${user.profileImage}"
+      src="${user.img}"
       alt="profileImage"
    >
 
