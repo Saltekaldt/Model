@@ -7,7 +7,7 @@ const model = {
              email: 'Morten@mortenmail.no',
              tlfNr: '12345678',
              id: 0,
-             img: 'Images\Profilbilde1.jpg', 
+             img: 'Images/Profilbilde1.jpg', 
             }, 
         darkMode: false
 

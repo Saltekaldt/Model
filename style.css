@@ -194,3 +194,40 @@
 #profileImageInput{
     margin-top: 10px;
 }
+
+
+.editProfileHeader{
+    max-width: 400px;
+    margin:auto;
+    text-align: center;
+}
+
+
+.editProfilePic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.editUsernameDiv{
+    margin-top: 20px;
+    padding: 5px;
+}
+
+
+.saveProfileButton{
+    margin-top: 20px;
+
+}
+
+
+.goBackButton{
+    margin-top: 20px;
+}
+
+
+#profileImageInput{
+    margin-top: 20px;
+}

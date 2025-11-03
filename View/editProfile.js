@@ -1,13 +1,17 @@
+
+const app = document.getElementById('app')
+
+editProfileView()
 function editProfileView(){
-  const user = Model.currentUser;
-  const edit = model.viewstate.editProfile;
+  const user = model.currentUser;
+  const edit = model.viewState.editProfile;
 
   app.innerHTML = /*HTML*/`
   
   
   <h1 class="editProfileHeader">Edit your profile</h1>
 
-  <img class="profilePic"
+  <img class="editProfilePic"
       src="${user.profileImage}"
       alt="profileImage"
    >
@@ -20,9 +24,12 @@ function editProfileView(){
         <input
             id="usernameInput"
             type="text"
-            placeholder="${edit.username ||}"
+            placeholder="${edit.username || user.username}"
         >
    
    </div>
+
+   <button class="saveProfileButton" onclick="saveProfile()">Save</button>
+   <button class="goBackButton" onclick="goHome()">Back</button>
   `
 }
