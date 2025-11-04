@@ -1,5 +1,5 @@
 function searchDatabase() {
-  const { search, course, farge } = model.viewstate.filterdisc;
+  const { search, course, farge } = model.viewstate.filterDisc;
   const nameInput = search.toLowerCase();
 
   return model.database.filter(disc => {
