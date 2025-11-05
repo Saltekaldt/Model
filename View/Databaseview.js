@@ -1,5 +1,3 @@
-databaseview();
-
 function databaseview(){
     document.getElementById("app").innerHTML = /*html*/`
     ${showHeader2()}<br><br><br><br><br>
