@@ -21,6 +21,7 @@ function editProfileView(){
         <label for="username">Username:</label>
         <br>
         <input
+            oninput="model.app.currentUser.name = this.value"
             id="usernameInput"
             type="text"
             placeholder="${edit.username || user.username}"

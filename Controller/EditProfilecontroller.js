@@ -1,6 +1,6 @@
 function saveProfile(){
-  const usernameInput = document.querySelector("#usernameInput").value;
-  const imageInput = document.querySelector("#profileImageInput").files[0];
+  var usernameInput = document.querySelector("#usernameInput").value;
+  var imageInput = document.querySelector("#profileImageInput").files[0];
 
   model.app.currentUser.username = usernameInput || model.currentUser.username;
 
