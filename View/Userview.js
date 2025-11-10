@@ -11,11 +11,11 @@ function profileView() {
             <img src="Images/Profilbilde1.jpg" class="avatar">
             <p>${user.name}</p>
           </div>
-          <button onclick="editProfileView()">Edit profile</button>
-          <button onclick="databaseview()">Database</button>
-          <button onclick="KontaktView()">Kontakt oss</button>
-          <button onclick="registerDiscView()">Registrer found disc</button>
-          <button onclick="openBag()">open bag</button>
+          <button class="userOptionButton" onclick="editProfileView()">Edit profile</button>
+          <button class="userOptionButton" onclick="databaseview()">Database</button>
+          <button class="userOptionButton" onclick="KontaktView()">Kontakt oss</button>
+          <button class="userOptionButton" onclick="registerDiscView()">Registrer found disc</button>
+          <button class="userOptionButton" onclick="openBag()">open bag</button>
         </div>
 
         <section class="content">
