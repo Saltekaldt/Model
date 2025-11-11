@@ -1,4 +1,4 @@
-updateViewLogin()
+//updateViewLogin()
 function updateViewLogin(){
     let html = /*html*/ `
     

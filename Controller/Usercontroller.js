@@ -32,7 +32,7 @@ function printYourBag() {
           <div class="disc-info">
             <span class="disc-name">${disc.name}</span>
             <span>${disc.dato || ''}</span>
-            <button onclick="donateDisc(${disc.id})">donate</button>
+            <button onclick="pushDisc(${disc.id})">Registrer i database</button>
           </div>
           <button onclick="">x</button>
         </div>
@@ -117,4 +117,26 @@ function closeBag(){
 function returnToBag(){
   const bagRegister = document.querySelector('#bagRegister')
   document.body.removeChild(bagRegister)
+}
+function pushDisc(id) {
+  const user = model.app.currentUser;
+  const bagDiscs = user.bagDiscs;
+    
+  // Find the disc in the user's bag
+  const disc = bagDiscs.find(d => d.id === id);
+  disc.status = 'savnet'
+  if (disc) {
+    // Create a copy so it's not linked by reference
+    const donatedDisc = { ...disc };
+
+    // Push the copy to the main database
+    model.database.push(donatedDisc);
+
+    // Optional: show a message
+    alert(`Disc "${disc.name}" has been registered in the database!`);
+  } else {
+    console.warn("Disc not found in bag.");
+  }
+
+  profileView()
 }
