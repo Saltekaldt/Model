@@ -49,7 +49,7 @@ function openBag() {
       <h2>Your Bag</h2>
       <div class="bagDiscs"></div>
       <div>
-        <button onclick="registerDiscToBag()">register New disc</button>
+        <button onclick="registerDiscToBag()" class="registerdiscbutton">register New disc</button>
       </div>
     </div>
   `;
