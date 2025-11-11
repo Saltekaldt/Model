@@ -25,9 +25,9 @@ function profileView() {
           <div class="disc-container"></div>
 
           <div>
-            <button>Doner selected</button>
-            <button>Hold selected</button>
-            <button>Mail selected</button>
+            <button class="discOptionsButton">Doner selected</button>
+            <button class="discOptionsButton">Hold selected</button>
+            <button class="discOptionsButton">Mail selected</button>
           </div>
         </section>
       </main>

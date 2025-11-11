@@ -76,7 +76,7 @@ if (userDiscs.length === 0) {
         <div class="disc-info">
           <span class="disc-name">${disc.navn}<br> ${disc.name}</span>
           <span>${disc.dato || ''}</span>
-          <button onclick="donateDisc(${disc.id})">Doner</button>
+          <button class="donateDiscButton" onclick="donateDisc(${disc.id})">Doner</button>
         </div>
         <button onclick="removeDisc(${disc.id})">x</button>
       </div>
