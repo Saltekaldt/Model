@@ -7,8 +7,9 @@ function editProfileView(){
 
   app.innerHTML = /*HTML*/`
   
-  
-  <h1 class="editProfileHeader">Edit your profile</h1>
+   <h1 class="editProfileHeader">Edit your profile</h1>
+
+  <div class="editProfileContainer">
 
   <img class="editProfilePic"
       src="${user.img}"
@@ -28,8 +29,11 @@ function editProfileView(){
         >
    
    </div>
+   
 
    <button class="saveProfileButton" onclick="saveProfile()">Save</button>
    <button class="goBackButton" onclick="goHome()">Back</button>
+
+   </div>
   `
 }
