@@ -1,6 +1,6 @@
 //KontaktView()
 function KontaktView(){
-    document.getElementById("app").innerHTML = 
+    document.getElementById("app").innerHTML = /*html*/ 
     `${showHeader2()}<br><br><br><br><br>
     <div class="registrationbackground">
     <div class="center">
