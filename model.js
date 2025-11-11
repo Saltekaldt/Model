@@ -1,6 +1,6 @@
 const model = {
-    app:{//del 1 - overordnet viewstate
-        currentPage: 'startPage',//dataBase, registerPage, contactPage, 
+    app: {//del 1 - overordnet viewstate
+        currentPage: 'startPage', //dataBase, registerPage, contactPage, loginPage, profilePage
         currentUser: {
              name: 'Morten',
              password: 'Morten10',

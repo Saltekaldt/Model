@@ -31,23 +31,5 @@ function drawRegistrationPage(){
                     <button onclick="registerUser()">Register New User</button>
                     <button onclick="HomePageView()">Go back</button>
             </div>
-        </div>
-
-    
-    `
-}
-function updateView(){
-    let page = model.app.currentPage
-    if(page == 'startPage'){
-        HomePageView()
-    }
-    else if (page == 'registerPage'){
-        drawRegistrationPage()
-    }
-    else if(page == 'contactPage'){
-        KontaktView()
-    }
-    else if(page == 'loginPage'){
-        updateViewLogin()
-    }
-}
+        </div>`
+};

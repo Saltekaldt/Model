@@ -66,8 +66,9 @@ function showHeader2(){
     <div  class="logoDiv">
           <img src='Images/img2.png'
                 alt = 'logo'
-          class="logoImage"
-          onclick="profileView()" >
+                class="logoImage"
+                onclick="profileView()"
+                onmouseover="this.style.cursor='pointer'">
           <span class="logoText" onclick="profileView()">Lost&Found DiscGolf</span>
   
     
