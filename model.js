@@ -23,7 +23,7 @@ const model = {
                 farge: 'Rosa',
                 navn: 'Morten',
                 dato: '22.10.2025',
-                status: 'Savnet',
+                status: 'Registrert',
                 id: 0,
             }], 
             }, 

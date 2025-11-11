@@ -31,7 +31,7 @@ function printYourBag() {
           </div>
           <div class="disc-info">
             <span class="disc-name">${disc.name}</span>
-            <span>${disc.dato || ''}</span>
+            <span class="disc-name">${disc.dato || ''}</span>
             <button onclick="pushDisc(${disc.id})">Registrer i database</button>
           </div>
           <button onclick="">x</button>
@@ -125,6 +125,7 @@ function pushDisc(id) {
   // Find the disc in the user's bag
   const disc = bagDiscs.find(d => d.id === id);
   disc.status = 'savnet'
+  disc.dato = new Date().toISOString().split('T')[0];
   if (disc) {
     // Create a copy so it's not linked by reference
     const donatedDisc = { ...disc };

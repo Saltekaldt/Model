@@ -83,54 +83,50 @@ function showHeader2(){
   `
 
 }
-function registerDiscToBag(){
-  if (document.querySelector('#bagRegister')) return
+function registerDiscToBag() {
+  if (document.querySelector('#bagRegister')) return;
 
-  const bagRegister = document.createElement('div')
-  bagRegister.id = 'bagRegister'
+  const bagRegister = document.createElement('div');
+  bagRegister.id = 'bagRegister';
 
   bagRegister.innerHTML = /*html*/`
-        <div class="bagInputs">
-            <div class="center">
-            <h1>Register new disc</h1>
-                <p>Status</p>
-                <input 
-                    type="text" 
-                    oninput="model.viewstate.registerfoundDisc.status = this.value"><br>
+    <div class="bagInputs">
+      <div class="center">
+        <h1>Register new disc</h1>
 
-                <p>Bane</p>
-                <input 
-                    type="text" 
-                    oninput="model.viewstate.registerfoundDisc.bane = this.value"><br>
+        <p>Status</p>
+        <input 
+          type="text" 
+          oninput="model.viewstate.registerfoundDisc.status = this.value"><br>
 
-                <p>farge</p>
-                <input 
-                    type="text" 
-                    oninput="model.viewstate.registerfoundDisc.farge = this.value"><br>
+        <p>Bane</p>
+        <input 
+          type="text" 
+          oninput="model.viewstate.registerfoundDisc.bane = this.value"><br>
 
-                <p>type</p>
-                <select onchange="model.viewstate.registerfoundDisc.name = this.value">
-                 <option value="Putter">Putter</option>
-                 <option value="driver">driver</option>
-                 <option value="mid-ranges">mid-ranges</option>
-                 <option value="fairway">fairway</option>
-                </select>
+        <p>Farge</p>
+        <input 
+          type="text" 
+          oninput="model.viewstate.registerfoundDisc.farge = this.value"><br>
 
-                <p>dato</p>
-                <input 
-                    type="number" 
-                    oninput="model.viewstate.registerfoundDisc.tlfNr = this.value"><br><br>
+        <p>Type</p>
+        <select onchange="model.viewstate.registerfoundDisc.name = this.value">
+          <option value="Putter">Putter</option>
+          <option value="Driver">Driver</option>
+          <option value="Mid-ranges">Mid-ranges</option>
+          <option value="Fairway">Fairway</option>
+        </select>
 
+        <p>Dato</p>
+        <input 
+          type="date" 
+          oninput="model.viewstate.registerfoundDisc.dato = this.value"><br><br>
 
-                    <button onclick="addDiscToBag()">add new disc</button>
-                    <button onclick="returnToBag()">Go back</button>
-            </div>
-        </div>
+        <button onclick="addDiscToBag()">Add new disc</button>
+        <button onclick="returnToBag()">Go back</button>
+      </div>
+    </div>
+  `;
 
-    
-    `;
   document.body.appendChild(bagRegister);
-
-
-
 }
