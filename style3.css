@@ -76,3 +76,28 @@
 }
 
 
+.search-result-info{
+  border: 5px solid  #09062a;
+  border-radius: 5px;
+}
+
+.search-result-info{
+  background-color: white;
+}
+
+
+.regFoundDiscButton{
+  background-color: #09062a;
+  color: whitesmoke;
+}
+
+.search-result-time,
+.search-result-discnumber
+{
+  background-color: whitesmoke;
+}
+
+.search-result-data{
+  background-color: whitesmoke;
+}
+

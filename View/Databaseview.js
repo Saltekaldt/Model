@@ -4,7 +4,7 @@ function databaseview(){
     <div class="database-grid">
 
         <div class="found-disc-button">
-            <button onclick="registerDiscView()">Register found disc</button>
+            <button class="regFoundDiscButton" onclick="registerDiscView()">Register found disc</button>
         </div>
 
         <div class="search-bar" class="test">

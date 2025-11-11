@@ -1,11 +1,13 @@
 
 
-//editProfileView()
+editProfileView()
 function editProfileView(){
   const user = model.app.currentUser;
   const edit = model.viewstate.editProfile;
 
   app.innerHTML = /*HTML*/`
+  ${showHeader2()}<br><br><br><br><br>
+  <br>
   
    <h1 class="editProfileHeader">Edit your profile</h1>
 
