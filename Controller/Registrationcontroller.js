@@ -27,6 +27,9 @@ function registerUser(){
         repeatPassword: '',
         email: '',
         tlfNr: '',
+        id: 0,
+        img: 'Images/Profilbilde1.jpg',
+        bagDiscs:[],
         };
      profileView();
 }
