@@ -1,6 +1,6 @@
 
 
-editProfileView()
+//editProfileView()
 function editProfileView(){
   const user = model.app.currentUser;
   const edit = model.viewstate.editProfile;
