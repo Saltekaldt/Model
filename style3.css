@@ -50,3 +50,29 @@
 
 
 
+.signInContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  transform: translateY(-40px);
+}
+
+.logInOptionsButtons{
+  background-color: #09062a;
+  color:white;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+
+  
+}
+
+.logInOptionsButtons:hover {
+      background-color: #2c297a;
+
+}
+
+
