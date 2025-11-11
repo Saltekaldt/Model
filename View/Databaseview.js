@@ -15,7 +15,9 @@ function databaseview(){
             ${createColorSelect()}
         </div>
 
+        <div class="search-result" class="test">
         ${printDiscs()}
+        </div>
 
         <div class="search-ordering" class="test">
             <select>
@@ -27,58 +29,86 @@ function databaseview(){
             </select>
         </div>
     </div>`;
+
+    addInputEvents();
 };
 
 function printDiscs(){
-    const discs = model.database;
+    const discs = searchDatabase();
     const { search, course, farge } = model.viewstate.filterDisc;
 
-    let html = /*html*/`
-    <div class="search-result" class="test">
-    `;
+    let html = "";
 
-    for(i = 0; i < discs.length; i++){
+    for(let i = 0; i < discs.length; i++){
         const disc = discs[i];
         html += /*html*/`
         <div class="search-result-info">
             <div class="search-result-time">dager til donasjon</div>
             <div class="search-result-disc-number">Disc ${i+1}</div>
-            <div class="search-result-data">(${disc.navn}, ${disc.bane}, ${disc.farge}, Dato)</div>
+            <div class="search-result-data">(Navn: ${disc.name}, Eier: ${disc.navn}, Bane: ${disc.bane}, Farge: ${disc.farge}, Dato)</div>
         </div>
         `;
     };
-    html += `</div>`;
-    return html;
+
+    return html === "" ? "<div>No discs found...</div>" : html;
 };
 
 function createCourseSelect(){
-    const discs = model.database;
-    const courses = ["Oslo 1", "Bane 2", "Bane 3", 
-                    "Bane 4", "Bane 5"];
+    const courses = ["Oslo 1", "Bane 2", "Bane 3", "Bane 4", "Bane 5"];
     let html = /*html*/ `
-        <select>
-        <option value=""></option>
+        <select class="select-course">
+        <option value="">Velg bane</option>
     `;
-    for(i = 0; i < courses.length; i++){
-        html += /*html*/ `
-        <option value="${courses[i]}">${courses[i]}</option>`;
+    for(let i = 0; i < courses.length; i++){
+        const selected = courses[i] === model.viewstate.filterDisc.course ? " selected" : "";
+        html += /*html*/ `<option value="${courses[i]}"${selected}>${courses[i]}</option>`;
     };
     html += `</select>`;
     return html;
 };
 
 function createColorSelect(){
-    const discs = model.database;
-    const colors = ["Rød", "Grønn", "Blå", 
-                    "Sort", "Hvit", "Rosa"];
+    const colors = ["Rød", "Grønn", "Blå", "Sort", "Hvit", "Rosa"];
     let html = /*html*/ `
-        <select>
-        <option value=""></option>
+        <select class="select-color">
+        <option value="">Velg farge</option>
     `;
-    for(i = 0; i < colors.length; i++){
-        html += /*html*/ `
-        <option value="${colors[i]}">${colors[i]}</option>`;
+    for(let i = 0; i < colors.length; i++){
+        const selected = colors[i] === model.viewstate.filterDisc.farge ? " selected" : "";
+        html += /*html*/ `<option value="${colors[i]}"${selected}>${colors[i]}</option>`;
     };
     html += `</select>`;
     return html;
+};
+
+function addInputEvents(){
+    const searchInput = document.querySelector(".search-bar input[type='text']");
+    const courseSelect = document.querySelector(".select-course");
+    const colorSelect = document.querySelector(".select-color");
+
+    if(searchInput){
+        searchInput.addEventListener("input", function(){
+            model.viewstate.filterDisc.search = this.value;
+            updateResults();
+        });
+    };
+
+    if(courseSelect){
+        courseSelect.addEventListener("change", function(){
+            model.viewstate.filterDisc.course = this.value;
+            updateResults();
+        });
+    };
+
+    if(colorSelect){
+        colorSelect.addEventListener("change", function(){
+            model.viewstate.filterDisc.farge = this.value;
+            updateResults();
+        });
+    };
+};
+
+function updateResults(){
+    const resultsDiv = document.querySelector(".search-result");
+    resultsDiv.innerHTML = printDiscs();
 };
