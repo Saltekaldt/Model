@@ -115,7 +115,35 @@ const model = {
         dato: '22.10.2025',
         status: 'Savnet',
         id: 0,
-    }
+    },{
+        name: "Putter",
+        bane: 'Oslo 1',
+        farge: 'Rosa',
+        navn: 'Nada',
+        dato: '16.10.2025',
+        status: 'Registrert',
+        id: 0,
+        
+    },
+    {
+        name: "Driver",
+        bane: 'Oslo 1',
+        farge: 'Rosa',
+        navn: 'Laurits',
+        dato: '22.10.2025',
+        status: 'Savnet',
+        id: 0,
+    },{
+        name: "Putter",
+        bane: 'Oslo 1',
+        farge: 'Rosa',
+        navn: 'Morten',
+        dato: '16.10.2025',
+        status: 'Registrert',
+        id: 0,
+        
+    },
+
 
     ],
     donatedDiscs:[],
